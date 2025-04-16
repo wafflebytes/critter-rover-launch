@@ -1,5 +1,5 @@
 
-import { Diamond, Paw, FileText, UsersRound, Coins } from "lucide-react";
+import { Diamond, Dog, FileText, UsersRound, Coins } from "lucide-react";
 import { 
   Card, 
   CardContent, 
@@ -17,7 +17,7 @@ const earnMethods = [
   },
   {
     title: "Booking More Walks",
-    icon: Paw,
+    icon: Dog,
     color: "text-orange-500",
     bgColor: "bg-orange-100"
   },
