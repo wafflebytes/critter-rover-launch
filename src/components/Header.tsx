@@ -74,12 +74,14 @@ const Header = () => {
               <span className="text-sm font-bold text-yellow-700">{coins}</span>
             </motion.div>
 
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="bg-critter-purple text-white rounded-full w-9 h-9 flex items-center justify-center font-bold"
-            >
-              <span>AK</span>
-            </motion.div>
+            <Link to="/profile">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="bg-critter-purple text-white rounded-full w-9 h-9 flex items-center justify-center font-bold cursor-pointer"
+              >
+                <span>AK</span>
+              </motion.div>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -111,10 +113,18 @@ const Header = () => {
             className="md:hidden mt-4 pt-4 border-t border-gray-100"
           >
             <nav className="flex flex-col space-y-3">
-              <Link to="/" className="text-gray-800 hover:text-critter-purple py-2 font-medium">
+              <Link
+                to="/find-walkers"
+                className="text-gray-800 hover:text-critter-purple py-2 font-medium"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Find a Caregiver
               </Link>
-              <Link to="/#community" className="text-gray-800 hover:text-critter-purple py-2 font-medium">
+              <Link
+                to="/community"
+                className="text-gray-800 hover:text-critter-purple py-2 font-medium"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Community
               </Link>
               <button className="flex items-center justify-between text-gray-800 hover:text-critter-purple py-2 font-medium w-full">
@@ -138,12 +148,14 @@ const Header = () => {
 
               <div className="pt-4 flex items-center justify-between">
                 <span className="text-sm text-gray-500 font-medium">Your Account</span>
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  className="bg-critter-purple text-white rounded-full w-8 h-8 flex items-center justify-center font-bold"
-                >
-                  <span className="text-sm">AK</span>
-                </motion.div>
+                <Link to="/profile">
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    className="bg-critter-purple text-white rounded-full w-8 h-8 flex items-center justify-center font-bold"
+                  >
+                    <span className="text-sm">AK</span>
+                  </motion.div>
+                </Link>
               </div>
             </nav>
           </motion.div>

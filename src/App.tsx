@@ -9,6 +9,7 @@ import FAQSection from "./components/FAQSection";
 import Footer from "./components/Footer";
 import FindWalkers from "./pages/FindWalkers";
 import Community from "./pages/Community";
+import Profile from "./pages/Profile";
 import { AnimatePresence, motion } from "framer-motion";
 
 function HomePage() {
@@ -54,6 +55,16 @@ function AnimatedRoutes() {
             transition={{ duration: 0.5 }}
           >
             <Community />
+          </motion.div>
+        } />
+        <Route path="/profile" element={
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Profile />
           </motion.div>
         } />
       </Routes>
