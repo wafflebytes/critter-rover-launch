@@ -24,8 +24,8 @@ function HomePage() {
       <ServicesSection />
       <CommunitySection />
       <BecomeSitterSection />
-      <ReferralSection />
       <FAQSection />
+      <ReferralSection />
     </motion.div>
   );
 }
