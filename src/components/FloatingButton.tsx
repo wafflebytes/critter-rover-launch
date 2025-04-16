@@ -1,5 +1,5 @@
 
-import { PawPrint, MessageCircle } from "lucide-react";
+import { MessageCircle, PawPrint } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/hooks/use-toast";
 
@@ -15,7 +15,7 @@ const FloatingButton = () => {
   return (
     <div className="fixed bottom-6 right-6 lg:hidden z-40">
       <div className="absolute -top-10 right-0 bg-white px-3 py-1.5 rounded-full shadow-md text-sm font-medium text-gray-700 animate-bounce whitespace-nowrap">
-        Talk to us!
+        Need help?
       </div>
       <Button 
         onClick={handleClick}

@@ -6,8 +6,8 @@ import {
   Check, 
   Clock, 
   Shield, 
-  MapPin,
-  Star 
+  Star,
+  MapPin
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { 
@@ -19,39 +19,46 @@ import {
   CardDescription 
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useState } from "react";
 
 const services = [
   {
-    title: "Pet Grooming",
-    description: "Professional grooming in the comfort of your home",
+    title: "Professional Pet Grooming",
+    description: "Skilled groomers come to your home with all equipment. Breed-specific styling.",
     icon: Scissors,
     color: "bg-pink-100",
     features: [
-      { icon: Check, text: "Breed-specific styling", color: "text-pink-600" },
-      { icon: Clock, text: "60-minute sessions", color: "text-pink-600" },
-      { icon: MapPin, text: "Available in 200+ localities", color: "text-pink-600" }
+      { icon: Check, text: "Specialized breed styling", color: "text-pink-600" },
+      { icon: MapPin, text: "Available in 200+ localities", color: "text-pink-600" },
+      { icon: Clock, text: "Flexible scheduling", color: "text-pink-600" }
     ],
-    price: "₹799",
-    highlight: "",
+    price: {
+      regular: "₹999",
+      discounted: "₹799"
+    },
+    highlight: "20% Off",
     ctaText: "Book a Session"
   },
   {
-    title: "Pet Training",
-    description: "Certified trainers for behavior & obedience training",
+    title: "Certified Training Programs",
+    description: "Personalized behavior & obedience training from certified experts at your convenience.",
     icon: GraduationCap,
     color: "bg-blue-100",
     features: [
-      { icon: Check, text: "Personalized training plans", color: "text-blue-600" },
-      { icon: Shield, text: "Certified trainers only", color: "text-blue-600" },
+      { icon: Check, text: "Customized training plans", color: "text-blue-600" },
+      { icon: Shield, text: "Certified professionals", color: "text-blue-600" },
       { icon: Star, text: "4.8/5 trainer rating", color: "text-blue-600" }
     ],
-    price: "₹1,299",
+    price: {
+      regular: "₹1,499",
+      discounted: "₹1,299"
+    },
     highlight: "Most Popular",
     ctaText: "Meet Trainers"
   },
   {
-    title: "Vet Booking",
-    description: "On-demand home visits or clinic appointments",
+    title: "Veterinary Home Visits",
+    description: "On-demand vet consultations at home or via video. 24/7 emergency support.",
     icon: Stethoscope,
     color: "bg-green-100",
     features: [
@@ -59,19 +66,60 @@ const services = [
       { icon: Clock, text: "24/7 emergency support", color: "text-green-600" },
       { icon: Shield, text: "Licensed veterinarians", color: "text-green-600" }
     ],
-    price: "₹999",
-    highlight: "",
+    price: {
+      regular: "₹1,299",
+      discounted: "₹999"
+    },
+    highlight: "New Service",
     ctaText: "Book Consultation"
   }
 ];
 
-const ServicesSection = () => {
+const BillingToggle = ({ onToggle }: { onToggle: (isYearly: boolean) => void }) => {
+  const [isYearly, setIsYearly] = useState(false);
+  
+  const handleToggle = () => {
+    setIsYearly(!isYearly);
+    onToggle(!isYearly);
+  };
+  
   return (
-    <section className="py-12 px-4 bg-gray-50">
+    <div className="flex items-center justify-center space-x-4 mb-8">
+      <span className={`text-sm font-medium ${!isYearly ? 'text-gray-900' : 'text-gray-500'}`}>Monthly</span>
+      <button
+        className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-critter-purple focus:ring-offset-2 ${
+          isYearly ? 'bg-critter-purple' : 'bg-gray-200'
+        }`}
+        onClick={handleToggle}
+        type="button"
+        role="switch"
+        aria-checked={isYearly}
+      >
+        <span
+          className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+            isYearly ? 'translate-x-6' : 'translate-x-1'
+          }`}
+        />
+      </button>
+      <span className={`text-sm font-medium flex items-center ${isYearly ? 'text-gray-900' : 'text-gray-500'}`}>
+        Yearly
+        <span className="ml-1.5 bg-green-100 text-green-800 text-xs px-1.5 py-0.5 rounded">Save 20%</span>
+      </span>
+    </div>
+  );
+};
+
+const ServicesSection = () => {
+  const [isYearly, setIsYearly] = useState(false);
+  
+  return (
+    <section className="py-12 px-4 bg-white">
       <div className="container mx-auto">
-        <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-10">
+        <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-6">
           <h2 className="text-3xl font-bold mb-4">Premium Pet Care Services</h2>
-          <p className="text-gray-600">Discover professional services tailored to your pet's needs. All services earn you CritterCoins!</p>
+          <p className="text-gray-600">Professional services tailored to your pet's needs, with special pricing for new users.</p>
+          
+          <BillingToggle onToggle={setIsYearly} />
         </div>
         
         <div className="flex overflow-x-auto pb-6 scroll-x-mandatory gap-6 md:flex-wrap md:justify-center md:overflow-visible">
@@ -102,11 +150,20 @@ const ServicesSection = () => {
                 </div>
                 <div className="flex justify-between items-center border-t border-gray-100 pt-4">
                   <div>
-                    <p className="text-sm text-gray-500">Starting from</p>
-                    <p className="text-2xl font-bold text-gray-800">{service.price}</p>
+                    <p className="text-sm text-gray-500">{isYearly ? 'Yearly price' : 'One-time service'}</p>
+                    <div className="flex items-center">
+                      <p className="text-2xl font-bold text-gray-800">{isYearly ? 
+                        `₹${parseInt(service.price.discounted.replace(/,/g, '').replace('₹', '')) * 10},999` : 
+                        service.price.discounted}
+                      </p>
+                      <span className="ml-2 text-sm line-through text-gray-400">{isYearly ? 
+                        `₹${parseInt(service.price.regular.replace(/,/g, '').replace('₹', '')) * 10},999` : 
+                        service.price.regular}
+                      </span>
+                    </div>
                   </div>
                   <div className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">
-                    Earn 25 coins
+                    First booking
                   </div>
                 </div>
               </CardContent>

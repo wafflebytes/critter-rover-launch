@@ -8,6 +8,8 @@ import TrustSection from "@/components/TrustSection";
 import ReferralSection from "@/components/ReferralSection";
 import Footer from "@/components/Footer";
 import FloatingButton from "@/components/FloatingButton";
+import BecomeSitterSection from "@/components/BecomeSitterSection";
+import PremiumSection from "@/components/PremiumSection";
 
 const Index = () => {
   return (
@@ -16,8 +18,9 @@ const Index = () => {
       <main>
         <HeroSection />
         <ServicesSection />
-        <CritterCoinsSection />
         <CommunitySection />
+        <PremiumSection />
+        <BecomeSitterSection />
         <TrustSection />
         <ReferralSection />
       </main>

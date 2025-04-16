@@ -1,5 +1,5 @@
 
-import { Heart, MessageSquare, Coins } from "lucide-react";
+import { Heart, MessageSquare, Coins, Camera, MessageCircle, Award, User } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { 
@@ -8,134 +8,149 @@ import {
   CardFooter
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Badge } from "@/components/ui/badge";
 
-const communityPosts = [
-  {
-    id: 1,
-    type: "photo",
-    imageUrl: "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&q=80&w=662&ixlib=rb-4.0.3",
-    username: "Sarah K.",
-    likes: 42,
-    comments: 13,
-    coins: 5,
-    title: "Morning walk with Luna 🐕"
-  },
-  {
-    id: 2,
-    type: "diary",
-    imageUrl: "https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&q=80&w=774&ixlib=rb-4.0.3",
-    username: "Mike T.",
-    likes: 27,
-    comments: 8,
-    coins: 7,
-    title: "Bruno's first long walk!"
-  },
-  {
-    id: 3,
-    type: "meetup",
-    imageUrl: "https://images.unsplash.com/photo-1601758174039-617983b8cdd5?auto=format&fit=crop&q=80&w=774&ixlib=rb-4.0.3",
-    username: "DogLovers Club",
-    likes: 89,
-    comments: 34,
-    coins: 12,
-    title: "Weekend meetup at Central Park"
-  },
-  {
-    id: 4,
-    type: "guide",
-    imageUrl: "https://images.unsplash.com/photo-1568393691622-c7ba131d63b4?auto=format&fit=crop&q=80&w=1031&ixlib=rb-4.0.3",
-    username: "PetTrainer",
-    likes: 135,
-    comments: 47,
-    coins: 25,
-    title: "Training tips for energetic dogs"
-  },
-  {
-    id: 5,
-    type: "photo",
-    imageUrl: "https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&q=80&w=1170&ixlib=rb-4.0.3",
-    username: "Lisa M.",
-    likes: 56,
-    comments: 12,
-    coins: 8,
-    title: "Charlie enjoying the beach"
-  },
-  {
-    id: 6,
-    type: "diary",
-    imageUrl: "https://images.unsplash.com/photo-1541876176131-3f5e84a7331a?auto=format&fit=crop&q=80&w=1171&ixlib=rb-4.0.3",
-    username: "John D.",
-    likes: 38,
-    comments: 9,
-    coins: 6,
-    title: "A week with our new pup"
-  }
-];
-
-const CommunitySection = () => {
+const CommunitySectionRedesigned = () => {
   const [activeTab, setActiveTab] = useState("trending");
   
   return (
     <section className="py-12 px-4 bg-gray-50">
       <div className="container mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-center mb-8">
-          <h2 className="text-3xl font-bold mb-4 md:mb-0">Community Highlights</h2>
-          <div>
-            <Tabs defaultValue="trending" onValueChange={setActiveTab}>
-              <TabsList className="bg-white">
-                <TabsTrigger value="trending">Trending</TabsTrigger>
-                <TabsTrigger value="newest">Newest</TabsTrigger>
-                <TabsTrigger value="most-coins">Most Coins</TabsTrigger>
-              </TabsList>
-            </Tabs>
+        <div className="flex flex-col items-center mb-10 text-center">
+          <div className="inline-flex items-center px-4 py-1.5 bg-purple-100 rounded-full mb-4">
+            <User size={16} className="text-critter-purple mr-2" />
+            <span className="text-sm font-medium text-critter-purple">Join Our Community</span>
           </div>
+          <h2 className="text-3xl font-bold mb-3">Share & Earn CritterCoins</h2>
+          <p className="text-gray-600 max-w-2xl">
+            Post photos of your pets, share experiences, and earn rewards in our vibrant community
+          </p>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {communityPosts.map((post) => (
-            <Card key={post.id} className="overflow-hidden border-none shadow-md hover:shadow-lg transition-shadow duration-300">
-              <div className="relative">
-                <img 
-                  src={post.imageUrl} 
-                  alt={post.title} 
-                  className="w-full h-48 object-cover"
-                />
-                <div className="absolute top-3 left-3 bg-white px-2 py-1 rounded-md text-xs font-semibold text-gray-700">
-                  {post.type.charAt(0).toUpperCase() + post.type.slice(1)}
-                </div>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+          <Card className="bg-white border border-gray-100 hover:shadow-md transition-shadow">
+            <CardContent className="p-6 flex flex-col items-center text-center">
+              <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mb-4">
+                <Camera size={20} className="text-pink-600" />
               </div>
-              <CardContent className="p-4">
-                <h3 className="font-semibold text-lg mb-1">{post.title}</h3>
-                <p className="text-sm text-gray-600 mb-3">by {post.username}</p>
-              </CardContent>
-              <CardFooter className="px-4 py-3 bg-gray-50 flex justify-between items-center">
-                <div className="flex space-x-4">
-                  <div className="flex items-center">
-                    <Heart size={16} className="text-red-500 mr-1" />
-                    <span className="text-sm">{post.likes}</span>
-                  </div>
-                  <div className="flex items-center">
-                    <MessageSquare size={16} className="text-blue-500 mr-1" />
-                    <span className="text-sm">{post.comments}</span>
-                  </div>
-                </div>
-                <div className="flex items-center bg-yellow-100 px-2 py-1 rounded">
-                  <Coins size={14} className="text-yellow-600 mr-1" />
-                  <span className="text-sm font-medium">{post.coins}</span>
-                </div>
-              </CardFooter>
-            </Card>
-          ))}
+              <h3 className="font-medium text-gray-900 mb-1">Share Pet Photos</h3>
+              <p className="text-sm text-gray-500">Post cute pics of your furry friends</p>
+            </CardContent>
+          </Card>
+          
+          <Card className="bg-white border border-gray-100 hover:shadow-md transition-shadow">
+            <CardContent className="p-6 flex flex-col items-center text-center">
+              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                <MessageCircle size={20} className="text-blue-600" />
+              </div>
+              <h3 className="font-medium text-gray-900 mb-1">Join Discussions</h3>
+              <p className="text-sm text-gray-500">Connect with fellow pet parents</p>
+            </CardContent>
+          </Card>
+          
+          <Card className="bg-white border border-gray-100 hover:shadow-md transition-shadow">
+            <CardContent className="p-6 flex flex-col items-center text-center">
+              <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                <Award size={20} className="text-purple-600" />
+              </div>
+              <h3 className="font-medium text-gray-900 mb-1">Get Verified</h3>
+              <p className="text-sm text-gray-500">Earn badges and special status</p>
+            </CardContent>
+          </Card>
+          
+          <Card className="bg-white border border-gray-100 hover:shadow-md transition-shadow">
+            <CardContent className="p-6 flex flex-col items-center text-center">
+              <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mb-4">
+                <Coins size={20} className="text-yellow-600" />
+              </div>
+              <h3 className="font-medium text-gray-900 mb-1">Earn CritterCoins</h3>
+              <p className="text-sm text-gray-500">Redeem for services and perks</p>
+            </CardContent>
+          </Card>
         </div>
         
-        <div className="text-center mt-8">
-          <Button className="bg-critter-purple hover:bg-critter-purple/90">
-            Explore More
+        <div className="text-center mb-8">
+          <Button className="bg-critter-purple hover:bg-critter-purple/90 px-6">
+            Visit Community Hub
           </Button>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+          <CommunityCard 
+            image="/lovable-uploads/36d73623-890a-4126-8f38-952dbcb278d5.png"
+            name="Ravi Sharma"
+            location="Delhi, India"
+            comment="My pup Max had the best time with his sitter! Highly recommend!"
+            likes={142}
+            coins={20}
+          />
+          
+          <CommunityCard 
+            image="/lovable-uploads/90cc52a8-1ac3-4f13-97dc-94a4a19075f2.png"
+            name="Priya Patel"
+            location="Mumbai, India"
+            comment="My cat Whiskers is so picky, but loved the sitter we found on Critter!"
+            likes={98}
+            coins={35}
+          />
+          
+          <CommunityCard 
+            image="https://images.unsplash.com/photo-1601758174039-617983b8cdd5?auto=format&fit=crop&q=80&w=774&ixlib=rb-4.0.3"
+            name="Arjun Mehta"
+            location="Bangalore, India"
+            comment="Daily walks with our Critter sitter have made such a difference for Bruno!"
+            likes={124}
+            coins={45}
+          />
         </div>
       </div>
     </section>
   );
 };
 
-export default CommunitySection;
+const CommunityCard = ({ image, name, location, comment, likes, coins }: { 
+  image: string;
+  name: string;
+  location: string;
+  comment: string;
+  likes: number;
+  coins: number;
+}) => {
+  return (
+    <Card className="overflow-hidden border-none shadow-md hover:shadow-lg transition-shadow">
+      <div className="h-48 overflow-hidden">
+        <img src={image} alt={name} className="w-full h-full object-cover" />
+      </div>
+      <CardContent className="p-4">
+        <div className="flex items-center mb-3">
+          <div className="w-10 h-10 rounded-full bg-gray-200 overflow-hidden mr-3">
+            <img 
+              src={`https://ui-avatars.com/api/?name=${name.replace(' ', '+')}&background=random`} 
+              alt={name} 
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div>
+            <p className="font-medium text-gray-900">{name}</p>
+            <p className="text-xs text-gray-500">{location}</p>
+          </div>
+        </div>
+        <p className="text-gray-700 mb-2">{comment}</p>
+      </CardContent>
+      <CardFooter className="px-4 py-3 bg-gray-50 flex justify-between items-center">
+        <div className="flex items-center">
+          <Button variant="ghost" size="sm" className="px-2 py-0 h-auto">
+            <Heart size={16} className="text-gray-400 hover:text-red-500 mr-1.5" />
+            <span className="text-sm text-gray-600">{likes}</span>
+          </Button>
+        </div>
+        <div className="flex items-center bg-yellow-100 px-2 py-1 rounded text-xs font-medium text-yellow-700">
+          <Coins size={12} className="text-yellow-600 mr-1" />
+          +{coins} CritterCoins
+        </div>
+      </CardFooter>
+    </Card>
+  );
+};
+
+export default CommunitySectionRedesigned;

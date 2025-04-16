@@ -1,4 +1,5 @@
 
+import { useState } from "react";
 import { MapPin, Calendar, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { 
@@ -8,13 +9,12 @@ import {
 } from "@/components/ui/popover";
 import { Calendar as CalendarComponent } from "@/components/ui/calendar";
 import { Input } from "@/components/ui/input";
-import { useState } from "react";
 
 const HeroSection = () => {
   const [date, setDate] = useState<Date | undefined>(undefined);
   
   return (
-    <section className="py-10 md:py-16 px-4">
+    <section className="py-10 md:py-16 px-4 bg-gray-50">
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row items-center">
           {/* Left Side */}
@@ -22,12 +22,12 @@ const HeroSection = () => {
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
               Find Trusted Dog Walkers Nearby 🐾
             </h1>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-xl text-gray-600 mb-6">
               Real-time availability. GPS tracking. Subscription perks.
             </p>
             
             {/* Search Bar */}
-            <div className="bg-white p-4 rounded-xl shadow-lg">
+            <div className="bg-white p-4 rounded-xl shadow-md">
               <div className="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-3">
                 <div className="relative flex-1">
                   <div className="absolute left-3 top-3 text-gray-400">
@@ -66,6 +66,10 @@ const HeroSection = () => {
                 </Button>
               </div>
             </div>
+            
+            <div className="mt-4 text-sm text-gray-500">
+              Popular: <span className="text-critter-purple cursor-pointer hover:underline">Koramangala</span>, <span className="text-critter-purple cursor-pointer hover:underline">Indiranagar</span>, <span className="text-critter-purple cursor-pointer hover:underline">HSR Layout</span>
+            </div>
           </div>
           
           {/* Right Side */}
@@ -77,7 +81,7 @@ const HeroSection = () => {
                 className="w-full object-cover rounded-2xl"
                 style={{ height: "400px" }}
               />
-              <div className="absolute bottom-6 right-6 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-md">
+              <div className="absolute bottom-6 right-6 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-md">
                 <p className="font-medium text-gray-800">Trusted by 10K+ Pet Parents</p>
               </div>
             </div>
