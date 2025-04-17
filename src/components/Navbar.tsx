@@ -11,7 +11,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-white border-b border-gray-100">
+    <nav className="sticky top-0 z-50 bg-white border-b bvorder-gray-100">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center">
@@ -23,15 +23,15 @@ const Navbar = () => {
           <Link to="/" className="text-gray-700 hover:text-critter-purple font-medium">
             Search Sitters
           </Link>
-          
+
           <Link to="/" className="text-gray-700 hover:text-critter-purple font-medium">
             Community
           </Link>
-          
+
           <Link to="/" className="text-gray-700 hover:text-critter-purple font-medium">
             Trust & Safety
           </Link>
-          
+
           <Link to="/" className="text-amber-500 hover:text-amber-600 font-medium">
             Become a Sitter
           </Link>
@@ -74,23 +74,23 @@ const Navbar = () => {
             <Link to="/" className="text-gray-700 hover:text-critter-purple font-medium py-2" onClick={toggleMenu}>
               Search Sitters
             </Link>
-            
+
             <Link to="/" className="text-gray-700 hover:text-critter-purple font-medium py-2" onClick={toggleMenu}>
               Community
             </Link>
-            
+
             <Link to="/" className="text-gray-700 hover:text-critter-purple font-medium py-2" onClick={toggleMenu}>
               Trust & Safety
             </Link>
-            
+
             <Link to="/" className="text-amber-500 hover:text-amber-600 font-medium py-2" onClick={toggleMenu}>
               Become a Sitter
             </Link>
-            
+
             <Link to="/signup" className="text-gray-700 hover:text-critter-purple font-medium py-2" onClick={toggleMenu}>
               Sign Up
             </Link>
-            
+
             <Link to="/help" className="text-gray-700 hover:text-critter-purple font-medium py-2" onClick={toggleMenu}>
               Help
             </Link>
