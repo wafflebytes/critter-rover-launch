@@ -10,7 +10,7 @@ import { ScrollAnimation } from "./ui/scroll-animation";
 const testimonial = {
   name: "Maya Singh",
   location: "Bangalore, India",
-  image: "public/customer-review.png",
+  image: "https://i.ibb.co/0R413DMC/Whats-App-Image-2025-04-17-at-12-53-59.jpg",
   comment: "Finding the perfect pet sitter used to be a challenge until I discovered Critter Rover. The platform connected me with trusted sitters in my neighborhood. My dog Bruno loves his new friend, and the peace of mind is priceless!",
   rating: 5,
   likes: 217,
