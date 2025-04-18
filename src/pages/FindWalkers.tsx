@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Calendar, Clock, MapPin, Star, Heart, Search } from 'lucide-react';
+import { Calendar, Clock, MapPin, Star, Heart, Search, Award, Clock3 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface Walker {
@@ -13,6 +13,10 @@ interface Walker {
   price: number;
   image: string;
   description: string;
+  specialties?: string[];
+  experience?: number;
+  availableNow?: boolean;
+  nextAvailable?: string;
 }
 
 const FindWalkers = () => {
@@ -23,51 +27,63 @@ const FindWalkers = () => {
   const walkers: Walker[] = [
     {
       id: 1,
-      name: "ReShan M.",
+      name: "Kavita B.",
       title: "Dogs! My heart, my career, my passion",
       rating: 5.0,
       reviews: 63,
       clients: 25,
-      location: "Fresno, CA",
-      price: 25,
-      image: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-      description: "My dog has given her paw & wags of approval to ReShan. As a rescue, she takes her time to give trust & affection, & she has given both to ReShan. He has helped with..."
+      location: "Indiranagar, Bangalore",
+      price: 300,
+      image: "https://api.dicebear.com/9.x/miniavs/svg?seed=Rahul&backgroundColor=b6e3f4",
+      description: "My dog has given her paw & wags of approval to Rahul. As a rescue, she takes her time to give trust & affection, & she has given both to Rahul. He has helped with...",
+      specialties: ["Puppies", "Senior Dogs", "Training"],
+      experience: 5,
+      availableNow: true
     },
     {
       id: 2,
-      name: "Kara B.",
+      name: "Rahul M.",
       title: "All you need under one woof",
       rating: 5.0,
       reviews: 473,
       clients: 169,
-      location: "Fresno, CA",
-      price: 20,
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1188&q=80",
-      description: "We have been using Kara for a few weeks now for dog walks and she has been great. We have 2 pit bull breeds with a combined weight of 130lbs. Kara has done a fantastic job..."
+      location: "Koramangala, Bangalore",
+      price: 250,
+      image: "https://api.dicebear.com/9.x/miniavs/svg?seed=Kavita&backgroundColor=ffdfbf",
+      description: "We have been using Kavita for a few weeks now for dog walks and she has been great. We have 2 indie dogs with a combined weight of 60kg. Kavita has done a fantastic job...",
+      specialties: ["Large Dogs", "Multiple Dogs", "Medication"],
+      experience: 8,
+      nextAvailable: "Tomorrow"
     },
     {
       id: 3,
-      name: "Yanette L.",
+      name: "Jay F.",
       title: "The purr-fect match for your pet!",
       rating: 4.9,
       reviews: 3,
       clients: 2,
-      location: "Clovis, CA",
-      price: 23,
-      image: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80",
-      description: "I highly recommend Yanette as a responsible and loving pet caregiver. She is incredibly attentive, patient, and compassionate, always ensuring that pets feel safe, comfortable..."
+      location: "HSR Layout, Bangalore",
+      price: 275,
+      image: "https://api.dicebear.com/9.x/miniavs/svg?seed=Yashika&backgroundColor=ffb3c4",
+      description: "I highly recommend Yashika as a responsible and loving pet caregiver. She is incredibly attentive, patient, and compassionate, always ensuring that pets feel safe, comfortable...",
+      specialties: ["Cats", "Home Visits", "Small Dogs"],
+      experience: 2,
+      availableNow: true
     },
     {
       id: 4,
-      name: "Jake F.",
+      name: "Radhika J.",
       title: "Pawsitive Vibes for You & Your pets",
       rating: 4.8,
       reviews: 14,
       clients: 8,
-      location: "Clovis, CA",
-      price: 40,
-      image: "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=934&q=80",
-      description: "Jake has been walking my two senior dogs for the past year, and I couldn't be happier with his service. He's reliable, caring, and genuinely loves animals..."
+      location: "Whitefield, Bangalore",
+      price: 300,
+      image: "https://api.dicebear.com/9.x/miniavs/svg?seed=Jay&backgroundColor=c0aede",
+      description: "Jay has been walking my two senior dogs for the past year, and I couldn't be happier with his service. He's reliable, caring, and genuinely loves animals...",
+      specialties: ["Reactive Dogs", "Senior Dogs", "Special Needs"],
+      experience: 4,
+      nextAvailable: "In 2 days"
     }
   ];
 
@@ -174,7 +190,7 @@ const FindWalkers = () => {
                   <div>
                     <label className="text-sm text-gray-600 flex items-center justify-between">
                       <span>Price Range</span>
-                      <span className="text-critter-purple font-medium">₹20 - ₹50</span>
+                      <span className="text-critter-purple font-medium">₹250 - ₹300</span>
                     </label>
                     <input
                       type="range"
@@ -255,6 +271,23 @@ const FindWalkers = () => {
                           <Heart size={18} className="text-gray-500 hover:text-red-500 transition-colors" />
                         </button>
                       </div>
+
+                      {/* Availability Badge */}
+                      {walker.availableNow && (
+                        <div className="mt-2 text-xs bg-green-100 text-green-800 py-1 px-2 rounded-full flex items-center justify-center gap-1">
+                          <span className="relative flex h-2 w-2">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-600 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-600"></span>
+                          </span>
+                          Available Now
+                        </div>
+                      )}
+                      {walker.nextAvailable && !walker.availableNow && (
+                        <div className="mt-2 text-xs bg-blue-100 text-blue-800 py-1 px-2 rounded-full flex items-center justify-center gap-1">
+                          <Clock3 size={12} />
+                          Available {walker.nextAvailable}
+                        </div>
+                      )}
                     </div>
 
                     {/* Walker Info */}
@@ -271,6 +304,12 @@ const FindWalkers = () => {
 
                       <div className="flex items-center mb-3 text-sm">
                         <p className="text-gray-600">{walker.location}</p>
+                        {walker.experience && (
+                          <p className="text-gray-600 ml-4 flex items-center">
+                            <Award size={14} className="mr-1 text-amber-500" />
+                            {walker.experience} years experience
+                          </p>
+                        )}
                       </div>
 
                       <div className="flex items-center gap-4 mb-3">
@@ -284,6 +323,20 @@ const FindWalkers = () => {
                           {walker.clients} repeat clients
                         </div>
                       </div>
+
+                      {/* Specialties */}
+                      {walker.specialties && (
+                        <div className="flex flex-wrap gap-1 mb-3">
+                          {walker.specialties.map((specialty, index) => (
+                            <span
+                              key={index}
+                              className="bg-purple-100 text-critter-purple text-xs px-2 py-1 rounded-full"
+                            >
+                              {specialty}
+                            </span>
+                          ))}
+                        </div>
+                      )}
 
                       <p className="text-gray-600 text-sm mb-4">{walker.description}</p>
 
