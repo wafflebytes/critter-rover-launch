@@ -155,7 +155,7 @@ const Community = () => {
         id: posts.length > 0 ? Math.max(...posts.map(p => p.id)) + 1 : 1,
         author: {
           name: "Current User",
-          image: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+          image: "https://api.multiavatar.com/CurrentUser.png",
           role: "Pet Owner",
           location: "Your Location"
         },
@@ -202,7 +202,7 @@ const Community = () => {
               : 1,
             author: {
               name: "Current User",
-              image: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+              image: "https://api.multiavatar.com/CurrentUser.png"
             },
             content: commentContent,
             timePosted: "Just now",
@@ -269,22 +269,22 @@ const Community = () => {
       {
         id: 1,
         author: {
-          name: "Jason Reynolds",
-          image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+          name: "Rahul Sharma",
+          image: "https://api.multiavatar.com/Rahul.png",
           role: "Pet Owner",
-          location: "San Francisco, CA"
+          location: "Indiranagar, Bangalore"
         },
-        content: "Just had the most amazing experience with our new dog walker from Critter! Max was so excited to see her again. Anyone else have amazing experiences to share?",
-        image: "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+        content: "Just had the most amazing experience with our new dog walker from Critter! My labrador Bruno was so excited to see her again. Anyone else in Indiranagar having great experiences with local pet services?",
+        image: "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
         likes: 42,
         comments: [
           {
             id: 1,
             author: {
-              name: "Sarah Kim",
-              image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+              name: "Priya Nair",
+              image: "https://api.multiavatar.com/Priya.png"
             },
-            content: "Yes! Our walker sends us pictures during every walk. It really puts our minds at ease.",
+            content: "Yes! Our walker sends us pictures during every walk around Cubbon Park. It's especially helpful during rainy season!",
             timePosted: "1 hour ago",
             likes: 5,
             liked: false
@@ -292,50 +292,50 @@ const Community = () => {
           {
             id: 2,
             author: {
-              name: "Mike Thompson",
-              image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+              name: "Karthik Reddy",
+              image: "https://api.multiavatar.com/Karthik.png"
             },
-            content: "What area are you in? Looking for a good walker for my pup!",
+            content: "Which area in Bangalore are you in? I'm looking for a good walker for my German Shepherd in Koramangala!",
             timePosted: "45 minutes ago",
             likes: 2,
             liked: false
           }
         ],
         shares: 5,
-        tags: ["DogWalking", "PetCare"],
+        tags: ["DogWalking", "BangalorePets"],
         timePosted: "2 hours ago",
         liked: false
       },
       {
         id: 2,
         author: {
-          name: "Sophia Martinez",
-          image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+          name: "Ananya Murthy",
+          image: "https://api.multiavatar.com/Ananya.png",
           role: "Pet Sitter",
-          location: "Chicago, IL"
+          location: "Koramangala, Bangalore"
         },
-        content: "Pro tip for new pet sitters: Always bring extra treats and toys! I've found that having a variety helps when meeting new pets who might be a bit nervous at first. What are your go-to tools for making pets comfortable?",
+        content: "Pro tip for new pet sitters in Bangalore: Always bring extra treats and toys! I've found that having a variety helps when meeting new pets during home visits. Also, be prepared for different housing setups in apartments vs villas in HSR Layout and Whitefield areas. What are your go-to tools for making pets comfortable?",
         likes: 87,
         comments: [],
         shares: 15,
-        tags: ["PetSitterTips", "PetCare"],
+        tags: ["PetSitterTips", "BangalorePetCare"],
         timePosted: "5 hours ago",
         liked: true
       },
       {
         id: 3,
         author: {
-          name: "Marcus Johnson",
-          image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+          name: "Vikram Deshpande",
+          image: "https://api.multiavatar.com/Vikram.png",
           role: "Dog Trainer",
-          location: "Austin, TX"
+          location: "Whitefield, Bangalore"
         },
-        content: "Just hosted my first puppy socialization meetup through Critter's community feature! We had 12 puppies and their owners show up. Amazing to see these little ones learn to play together.",
-        image: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+        content: "Just hosted my first puppy socialization meetup at Cubbon Park through Critter's community feature! We had 12 puppies and their owners show up. Amazing to see these little ones learn to play together. Bangalore pet parents are becoming more aware of socialization needs!",
+        image: "https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
         likes: 134,
         comments: [],
         shares: 23,
-        tags: ["PuppyTraining", "DogSocialization"],
+        tags: ["PuppyTraining", "BangaloreDogs"],
         timePosted: "1 day ago",
         liked: false
       }
@@ -345,31 +345,31 @@ const Community = () => {
     setEvents([
       {
         id: 1,
-        title: "Downtown Dog Meetup",
-        description: "Join us for a fun afternoon at the dog park! All breeds welcome.",
+        title: "Cubbon Park Dog Meetup",
+        description: "Join us for a fun afternoon at Cubbon Park! All breeds welcome.",
         date: "May 15, 2023",
-        time: "3:00 PM",
-        location: "Central Park Dog Run",
+        time: "4:00 PM",
+        location: "Cubbon Park, Bangalore",
         attendees: 32,
-        image: "https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+        image: "https://images.unsplash.com/photo-1602557496847-11ea01879c87?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
       },
       {
         id: 2,
         title: "Pet First Aid Workshop",
-        description: "Learn essential first aid skills for your pets in this hands-on workshop.",
+        description: "Learn essential first aid skills for your pets with veterinarians from Bangalore Pet Hospital.",
         date: "May 22, 2023",
         time: "10:00 AM",
-        location: "Community Center",
+        location: "Community Center, Koramangala, Bangalore",
         attendees: 18,
         image: "https://images.unsplash.com/photo-1612531822120-3d11c059df1b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
       },
       {
         id: 3,
         title: "Cat Lovers Convention",
-        description: "The purr-fect event for cat enthusiasts! Shop vendors, meet adoptable cats, and more.",
+        description: "The purr-fect event for cat enthusiasts! Shop locally-made cat products, meet adoptable cats from Bangalore Cat Squad, and more.",
         date: "June 5, 2023",
         time: "11:00 AM",
-        location: "City Convention Center",
+        location: "Phoenix Marketcity, Whitefield, Bangalore",
         attendees: 156,
         image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
       }
@@ -379,28 +379,28 @@ const Community = () => {
     setMembers([
       {
         id: 1,
-        name: "Emma Wilson",
-        image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+        name: "Deepika Hegde",
+        image: "https://api.multiavatar.com/Deepika.png",
         role: "Pet Sitter & Dog Walker",
-        bio: "5 years experience with all dog breeds. Certified in pet first aid and CPR.",
+        bio: "5 years experience with all dog breeds. Serving Indiranagar and Koramangala areas in Bangalore.",
         pets: 2,
         followers: 248
       },
       {
         id: 2,
-        name: "David Chen",
-        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+        name: "Arjun Sethi",
+        image: "https://api.multiavatar.com/Arjun.png",
         role: "Veterinary Assistant",
-        bio: "I love sharing pet care tips and helping owners keep their furry friends healthy!",
+        bio: "Working with Dr. Shetty's Clinic in JP Nagar. Love sharing pet care tips for Bangalore weather.",
         pets: 3,
         followers: 412
       },
       {
         id: 3,
-        name: "Tanya Brooks",
-        image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+        name: "Tanya Agarwal",
+        image: "https://api.multiavatar.com/Tanya.png",
         role: "Pet Photographer",
-        bio: "Capturing the personality of your pets in every shot. Available for bookings!",
+        bio: "Capturing the personality of your pets in every shot. Available for bookings across Bangalore!",
         pets: 4,
         followers: 598
       }
@@ -450,7 +450,7 @@ const Community = () => {
         >
           <h1 className="text-3xl md:text-4xl font-bold mb-4">Connect with Pet Lovers</h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Share experiences, get advice, and join events with pet owners and caregivers in your area.
+            Share experiences, get advice, and join events with pet owners and caregivers in your neighborhood.
           </p>
         </motion.div>
 
@@ -500,7 +500,7 @@ const Community = () => {
                       <div className="space-y-4 my-2">
                         <div className="flex items-center gap-3 mb-2">
                           <Avatar className="h-10 w-10">
-                            <AvatarImage src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" alt="Your profile" />
+                            <AvatarImage src="https://api.multiavatar.com/CurrentUser.png" alt="Your profile" />
                             <AvatarFallback>YP</AvatarFallback>
                           </Avatar>
                           <div>
@@ -658,11 +658,11 @@ const Community = () => {
                     Pet Care
                   </Button>
                   <Button
-                    variant={selectedCategory === 'Training' ? 'default' : 'outline'}
-                    className={selectedCategory === 'Training' ? 'bg-critter-purple' : ''}
-                    onClick={() => setSelectedCategory('Training')}
+                    variant={selectedCategory === 'BangaloreAreas' ? 'default' : 'outline'}
+                    className={selectedCategory === 'BangaloreAreas' ? 'bg-critter-purple' : ''}
+                    onClick={() => setSelectedCategory('BangaloreAreas')}
                   >
-                    Training
+                    Bangalore Areas
                   </Button>
                 </motion.div>
               )}
@@ -886,7 +886,7 @@ const Community = () => {
                             <div className="flex gap-3">
                               <Avatar className="h-8 w-8">
                                 <AvatarImage
-                                  src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+                                  src="https://api.multiavatar.com/CurrentUser.png"
                                   alt="Your profile"
                                 />
                                 <AvatarFallback>YP</AvatarFallback>
@@ -971,15 +971,15 @@ const Community = () => {
                   <h3 className="font-semibold mb-3">Trending Topics</h3>
                   <ul className="space-y-3">
                     <li className="bg-gray-50 p-3 rounded-lg">
-                      <div className="font-medium">#DogTrainingTips</div>
+                      <div className="font-medium">#BangalorePetParks</div>
                       <div className="text-xs text-gray-500">324 posts this week</div>
                     </li>
                     <li className="bg-gray-50 p-3 rounded-lg">
-                      <div className="font-medium">#CatCare</div>
+                      <div className="font-medium">#BangaloreMonsooners</div>
                       <div className="text-xs text-gray-500">198 posts this week</div>
                     </li>
                     <li className="bg-gray-50 p-3 rounded-lg">
-                      <div className="font-medium">#RescuePets</div>
+                      <div className="font-medium">#CubbonParkPals</div>
                       <div className="text-xs text-gray-500">156 posts this week</div>
                     </li>
                   </ul>
@@ -1081,7 +1081,7 @@ const Community = () => {
                   <div className="min-w-4 mt-1 h-4 w-4 rounded-full bg-[#B9E900] flex items-center justify-center text-white text-xs">
                     2
                   </div>
-                  <p>Share helpful information and support other pet owners.</p>
+                  <p>Share helpful information about local pet services and care.</p>
                 </li>
                 <li className="flex items-start gap-2">
                   <div className="min-w-4 mt-1 h-4 w-4 rounded-full bg-[#B9E900] flex items-center justify-center text-white text-xs">
@@ -1105,9 +1105,9 @@ const Community = () => {
 
             {/* Join the Community */}
             <div className="bg-gradient-to-br from-critter-purple to-deep-purple rounded-xl shadow-sm p-5 text-white">
-              <h3 className="font-bold text-xl mb-2">Join Our Pet Care Community</h3>
+              <h3 className="font-bold text-xl mb-2">Join Our Bangalore Pet Care Community</h3>
               <p className="text-sm text-white/90 mb-4">
-                Connect with local pet lovers, share stories, and get support for all your pet care needs.
+                Connect with local pet lovers in Bangalore, get advice on pet care services in the city, and find reliable pet services in your neighborhood.
               </p>
               <Button className="w-full bg-white text-critter-purple hover:bg-gray-100">
                 Create Your Profile

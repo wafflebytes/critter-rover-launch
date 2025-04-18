@@ -24,34 +24,34 @@ const Profile = () => {
 
   // Pet profile data
   const pet = {
-    name: "Luna",
+    name: "Sheru",
     breed: "Golden Retriever",
     age: "3 years",
-    weight: "65 lbs",
+    weight: "30 kg",
     birthday: "May 12, 2020",
     photo: "https://images.unsplash.com/photo-1612774412771-005aa083aebc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1025&q=80",
     coverPhoto: "https://images.unsplash.com/photo-1534361960057-19889db9621e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-    bio: "Energetic and friendly Golden Retriever who loves long walks, playing fetch, and cuddling. Luna is gentle with children and gets along well with other dogs.",
-    toys: ["Tennis balls", "Rope toys", "Stuffed squirrel"],
+    bio: "Energetic and friendly Golden Retriever who loves long walks, playing fetch, and cuddling. Sheru is gentle with children and gets along well with other dogs.",
+    toys: ["Cricket balls", "Rope toys", "Stuffed squirrel"],
     personality: ["Friendly", "Energetic", "Loyal", "Smart"],
-    favoriteTreats: ["Chicken", "Peanut butter", "Carrots"],
-    activities: ["Fetch", "Swimming", "Hiking"],
+    favoriteTreats: ["Paneer", "Peanut butter", "Carrots"],
+    activities: ["Fetch", "Swimming", "Morning walks"],
     vetInfo: {
-      name: "Dr. Kim Johnson",
-      clinic: "Pawsome Pet Care",
+      name: "Dr. Priya Sharma",
+      clinic: "Pawsome Pet Care Bangalore",
       lastCheckup: "March 15, 2023",
       nextAppointment: "September 18, 2023"
     },
     careSchedule: [
-      { day: "Monday", activity: "Morning Walk", time: "7:00 AM", caregiver: "Raj S." },
-      { day: "Wednesday", activity: "Grooming", time: "2:00 PM", caregiver: "Maya B." },
-      { day: "Friday", activity: "Dog Park", time: "5:00 PM", caregiver: "Owner" },
+      { day: "Monday", activity: "Morning Walk", time: "7:00 AM", caregiver: "Rahul S." },
+      { day: "Wednesday", activity: "Grooming", time: "2:00 PM", caregiver: "Ananya B." },
+      { day: "Friday", activity: "Cubbon Park Visit", time: "5:00 PM", caregiver: "Owner" },
     ],
     stats: {
       walkStreak: 14,
       totalWalks: 156,
       averageDistance: 2.3,
-      favoriteParks: ["Central Park", "Riverside Dog Run"],
+      favoriteParks: ["Cubbon Park", "Lalbagh Gardens"],
       energyLevel: 85,
       coinsEarned: 247
     },
@@ -61,16 +61,16 @@ const Profile = () => {
       { name: "Healthy Pup", description: "Perfect vet record", icon: <Shield size={14} /> }
     ],
     favoriteCaregivers: [
-      { id: 1, name: "Raj Singh", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80", rating: 4.9, services: ["Walking", "Sitting"] },
-      { id: 2, name: "Maya Brown", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80", rating: 5.0, services: ["Grooming", "Training"] }
+      { id: 1, name: "Rahul Sharma", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80", rating: 4.9, services: ["Walking", "Sitting"] },
+      { id: 2, name: "Ananya Bhatt", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80", rating: 5.0, services: ["Grooming", "Training"] }
     ],
     upcomingBookings: [
-      { id: 1, service: "Dog Walking", date: "Tomorrow", time: "10:00 AM", caregiver: "Raj Singh" },
-      { id: 2, service: "Grooming", date: "Aug 30, 2023", time: "2:00 PM", caregiver: "Maya Brown" }
+      { id: 1, service: "Dog Walking", date: "Tomorrow", time: "10:00 AM", caregiver: "Rahul Sharma" },
+      { id: 2, service: "Grooming", date: "Aug 30, 2023", time: "2:00 PM", caregiver: "Ananya Bhatt" }
     ],
     recentActivities: [
       { date: "Aug 15", activity: "Visited the vet", note: "Annual checkup - all healthy!" },
-      { date: "Aug 12", activity: "Dog Park", note: "Made friends with a Labrador" },
+      { date: "Aug 12", activity: "Cubbon Park", note: "Made friends with a Labrador" },
       { date: "Aug 10", activity: "Grooming", note: "Got a summer haircut" }
     ]
   };
@@ -132,7 +132,7 @@ const Profile = () => {
                     <span className="hidden md:inline text-gray-300">•</span>
                     <span className="flex items-center justify-center md:justify-start">
                       <MapPin size={14} className="mr-1 text-critter-purple" />
-                      New York, NY
+                      Bangalore, Karnataka
                     </span>
                   </div>
                 </div>
@@ -242,7 +242,7 @@ const Profile = () => {
                     <span className="text-sm font-medium">{pet.stats.energyLevel}%</span>
                   </div>
                   <p className="text-sm text-gray-500 mt-2">
-                    {pet.name} has plenty of energy today! A long walk or play session would be perfect.
+                    {pet.name} has plenty of energy today! A long walk in Cubbon Park or play session would be perfect.
                   </p>
                 </div>
 

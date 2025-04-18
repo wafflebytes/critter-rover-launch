@@ -49,19 +49,19 @@ const Header = () => {
                 <ChevronDown size={16} className="ml-1" />
               </button>
               <div className="absolute left-0 mt-2 w-52 bg-white rounded-lg shadow-lg py-2 z-10 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-200 border border-gray-100">
-                <Link to="/" className="block px-4 py-2 text-gray-800 hover:bg-[#B9E900]/10 hover:text-critter-purple flex items-center">
+                <Link to="/pet-sitting" className="block px-4 py-2 text-gray-800 hover:bg-[#B9E900]/10 hover:text-critter-purple flex items-center">
                   <Cat size={16} className="mr-2 text-critter-purple" />
                   Pet Sitting
                 </Link>
-                <Link to="/" className="block px-4 py-2 text-gray-800 hover:bg-[#B9E900]/10 hover:text-critter-purple flex items-center">
+                <Link to="/overnight-care" className="block px-4 py-2 text-gray-800 hover:bg-[#B9E900]/10 hover:text-critter-purple flex items-center">
                   <Moon size={16} className="mr-2 text-critter-purple" />
                   Overnight Care
                 </Link>
-                <Link to="/" className="block px-4 py-2 text-gray-800 hover:bg-[#B9E900]/10 hover:text-critter-purple flex items-center">
+                <Link to="/pet-grooming" className="block px-4 py-2 text-gray-800 hover:bg-[#B9E900]/10 hover:text-critter-purple flex items-center">
                   <Scissors size={16} className="mr-2 text-critter-purple" />
                   Pet Grooming
                 </Link>
-                <Link to="/" className="block px-4 py-2 text-gray-800 hover:bg-[#B9E900]/10 hover:text-critter-purple flex items-center">
+                <Link to="/vet-consultation" className="block px-4 py-2 text-gray-800 hover:bg-[#B9E900]/10 hover:text-critter-purple flex items-center">
                   <Stethoscope size={16} className="mr-2 text-critter-purple" />
                   Vet Consultation
                 </Link>
@@ -141,19 +141,19 @@ const Header = () => {
                 <ChevronDown size={16} />
               </button>
               <div className="pl-4 flex flex-col space-y-2 text-sm">
-                <Link to="/" className="text-gray-700 hover:text-critter-purple py-1 flex items-center">
+                <Link to="/pet-sitting" className="text-gray-700 hover:text-critter-purple py-1 flex items-center">
                   <Cat size={14} className="mr-2 text-critter-purple" />
                   Pet Sitting
                 </Link>
-                <Link to="/" className="text-gray-700 hover:text-critter-purple py-1 flex items-center">
+                <Link to="/overnight-care" className="text-gray-700 hover:text-critter-purple py-1 flex items-center">
                   <Moon size={14} className="mr-2 text-critter-purple" />
                   Overnight Care
                 </Link>
-                <Link to="/" className="text-gray-700 hover:text-critter-purple py-1 flex items-center">
+                <Link to="/pet-grooming" className="text-gray-700 hover:text-critter-purple py-1 flex items-center">
                   <Scissors size={14} className="mr-2 text-critter-purple" />
                   Pet Grooming
                 </Link>
-                <Link to="/" className="text-gray-700 hover:text-critter-purple py-1 flex items-center">
+                <Link to="/vet-consultation" className="text-gray-700 hover:text-critter-purple py-1 flex items-center">
                   <Stethoscope size={14} className="mr-2 text-critter-purple" />
                   Veterinary Consultation
                 </Link>

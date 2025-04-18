@@ -29,7 +29,7 @@ const HeroSection = () => {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="text-xl text-white/90 mb-8 max-w-lg"
             >
-              Connect with verified pet sitters who treat your pets like family. Book with confidence and enjoy peace of mind while you're away.
+              Connect with verified pet sitters across Bangalore who treat your pets like family. Book with confidence and enjoy peace of mind while you're away.
             </motion.p>
 
             {/* Search Box */}
@@ -118,7 +118,7 @@ const HeroSection = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
                 src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8MHx8&auto=format&fit=crop&w=1169&q=80"
-                alt="Happy dog with pet sitter"
+                alt="Happy dog with pet sitter in Cubbon Park, Bangalore"
                 className="rounded-2xl shadow-2xl w-full max-w-lg mx-auto"
               />
 
@@ -136,7 +136,7 @@ const HeroSection = () => {
                     className="w-12 h-12 rounded-full object-cover mr-3"
                   />
                   <div>
-                    <p className="font-medium text-gray-900">Aanya S.</p>
+                    <p className="font-medium text-gray-900">Priya S.</p>
                     <div className="flex items-center text-yellow-500 text-sm">
                       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
@@ -156,7 +156,7 @@ const HeroSection = () => {
                       <span className="ml-1 text-gray-700">5.0</span>
                     </div>
                     <p className="text-xs text-gray-500 mt-1">
-                      "Aanya took incredible care of our dog! Will book again."
+                      "Priya took incredible care of our dog at Indiranagar! Will book again."
                     </p>
                   </div>
                 </div>
