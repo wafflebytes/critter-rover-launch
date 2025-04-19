@@ -3,6 +3,11 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
 const HeroSection = () => {
+  // Function to handle navigation
+  const handleSearchClick = () => {
+    window.location.href = '/find-walkers';
+  };
+
   return (
     <section className="bg-gradient-to-br from-[#6220D9] to-[#3D06B7] text-white pt-16 pb-20 px-4">
       <div className="container mx-auto">
@@ -71,7 +76,10 @@ const HeroSection = () => {
                   </div>
                 </div>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button className="bg-white text-[#6220D9] hover:bg-white/90 px-6 py-6">
+                  <Button
+                    className="bg-white text-[#6220D9] hover:bg-white/90 px-6 py-6"
+                    onClick={handleSearchClick}
+                  >
                     <Search size={18} className="mr-2" />
                     Search
                   </Button>
