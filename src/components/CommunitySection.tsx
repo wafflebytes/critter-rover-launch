@@ -11,7 +11,7 @@ const testimonial = {
   name: "Maya Singh",
   location: "Bangalore, India",
   image: "https://i.ibb.co/0R413DMC/Whats-App-Image-2025-04-17-at-12-53-59.jpg",
-  comment: "Finding the perfect pet sitter used to be a challenge until I discovered Critter Rover. The platform connected me with trusted sitters in my neighborhood. My dog Bruno loves his new friend, and the peace of mind is priceless!",
+  comment: "I absolutely love the concept behind Critter! It's high time pet parents had a reliable, on-demand solution for grooming, walking, and vet visits. The idea is super convenient and fills a real gap in the market. Even though the pilot is still on the way, I can already see this becoming a go-to app for pet care. The team behind it seems passionate and thoughtful. Can’t wait to see it live and give it a try!",
   rating: 5,
   likes: 217,
   coins: 45,
